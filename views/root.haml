@@ -1,0 +1,35 @@
+%div.jumbotron
+  %div.container
+    %h4
+      %span.glyphicon.glyphicon-pushpin
+       This is a blank website
+    Blah blah blah
+
+%div.container
+  %div.row
+    %div.col-md-12
+      Herp derp derp
+
+  %div.row
+    %div.col-md-6
+      %h5
+        %span.glyphicon.glyphicon-off
+        Need to find somewhere to park your bike?
+      %button.btn.btn-info#cycle_racks
+        Herp derp
+      %button.btn.btn-success#find_nearest
+        Derp derp
+    %div.col-md-6
+      %h5
+        %span.glyphicon.glyphicon-star-empty
+        Looking for something else?
+      %h5{style: 'margin-top: 16px; display:inline;'}
+        Find me a nearby
+      %div.btn-group.dropup
+        %button.btn.btn-default.dropdown-toggle{'data-toggle' => 'dropdown'}
+          place of interest
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{href: '#'}
+              Restroom
