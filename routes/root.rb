@@ -1,4 +1,4 @@
-class FrontEnd < Sinatra::Application
+class FancyARide < Sinatra::Application
   get '/' do
     @title = 'Mapping demo'
     haml :root
