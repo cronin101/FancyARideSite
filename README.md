@@ -3,12 +3,12 @@ FancyARide
 
 * Make sure you have bundler installed
 
-`gem install bundler`
+`$ gem install bundler`
 
 * Make sure you have all dependencies
 
-`bundle install`
+`$ bundle install`
 
 * Run the webserver
 
-`puma`
+`$ puma`
