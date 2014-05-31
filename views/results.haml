@@ -9,20 +9,20 @@
     %div.col-md-6.col-sm-offset-3
       %h3
         %span.glyphicon.glyphicon-comment
-        Which features are most desired by men or women?
-  %div.row
-    %div.col-md-8.col-sm-offset-2
-      %canvas{:id => "radar_chart", :width => "750", :height => "600"}
-
-  %div.row
-    %div.col-md-6.col-sm-offset-3
-      %h3
-        %span.glyphicon.glyphicon-comment
         What Percentage of People in Glasgow Cycle?
   %br
   %div.row
     %div.col-md-6.col-sm-offset-4
       %canvas{:id => "who_cycles_chart", :width => "400", :height => "400"}
+
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-comment
+        For current Glasgow cyclists, which map features were most important? (broken down by gender).
+  %div.row
+    %div.col-md-8.col-sm-offset-2
+      %canvas{:id => "radar_chart", :width => "750", :height => "600"}
 
   %div.row
     %div.col-md-6.col-sm-offset-3
@@ -49,7 +49,7 @@
       var ctx_radar = $("#radar_chart").get(0).getContext("2d");
       var myNewChartRadar = new Chart(ctx_radar);
       var data_radar = {
-            labels : ["Route Map","Parking Map","Bike Shop Map","Air Quality Map","Accident Map"],
+            labels : ["Cycle Lane Map","Bicycle Parking Map","Bike Shop Map","City Air Quality Map","Traffic Accident Map"],
             datasets : [
               {
                 fillColor : "rgba(242,153,236,0.5)",
