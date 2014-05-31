@@ -27,19 +27,21 @@
             %br/
             %input{:type => "checkbox", :name => "map_apps", :value => "gmaps"} Google Maps
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "here_maps"} Here Maps
+            %input{:type => "checkbox", :name => "map_apps", :value => "here_maps"} Here Maps
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "mapquest"} MapQuest
+            %input{:type => "checkbox", :name => "map_apps", :value => "mapquest"} MapQuest
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "open_street_map"} OpenStreetMap
+            %input{:type => "checkbox", :name => "map_apps", :value => "open_street_map"} OpenStreetMap
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "city_mapper"} City Mapper
+            %input{:type => "checkbox", :name => "map_apps", :value => "city_mapper"} City Mapper
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "crowd_map"} Crowdmap
+            %input{:type => "checkbox", :name => "map_apps", :value => "crowd_map"} Crowdmap
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "track_profiler"} TrackProfiler
+            %input{:type => "checkbox", :name => "map_apps", :value => "track_profiler"} TrackProfiler
             %br/
-            %input{:type => "checkbox", :name => "mapp_apps", :value => "other"} Other
+            %input{:type => "checkbox", :name => "map_apps", :value => "other"} Other
+            %br/
+            %input{:type => "text", :name => "map_apps_other", :class => "text", :style => "width: 300px"}
           %hr
           %li
             %label{:for => "cycle_yn"} Do you cycle in the city of Glasgow?:
@@ -70,9 +72,13 @@
             %br/
             %input{:type => "checkbox", :name => "cycle_yes", :value => "around"} To get around
             %br/
-            %input{:type => "checkbox", :name => "cycle_yes", :value => "fun"} For leisure/fun/exercise
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "fun"} For leisure/fun
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "exercise"} For exercise
             %br/
             %input{:type => "checkbox", :name => "cycle_yes", :value => "other"} Other
+            %br/
+            %input{:type => "text", :name => "cycle_yes_other", :class => "text", :style => "width: 300px"}
           %br/
           %li
             %label{:for => "cycle_freq"} If yes, how often do you cycle?:
@@ -110,6 +116,8 @@
             %input{:type => "checkbox", :name => "cycle_apps", :value => "bike_doctor"} Bike Doctor
             %br/
             %input{:type => "checkbox", :name => "cycle_apps", :value => "other"} Other
+            %br/
+            %input{:type => "text", :name => "cycle_apps_other", :class => "text", :style => "width: 300px"}
           %br/
           %li
             %label{:for => "cycle_app_freq"} If yes, how often do you use cycle apps?:
@@ -127,7 +135,7 @@
             %input{:type => "radio", :name => "cycle_app_freq", :value => "unsure"} Unsure
           %hr
           %li
-            %label{:for => "ranking"} Please rank the following in order of importance, 1,2,3,4,5: 1 being highest importance, 5 being lowest importance?:
+            %label{:for => "ranking"} Please indicate the importance of the following on a scale of 1 to 5, 1 being highest importance, 5 being lowest importance:
             %br/
             %input{:type => "text", :name => "ranking_route_map", :class => "text"} A map showing dedicated cycle routes
             %br/
