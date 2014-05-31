@@ -1,16 +1,42 @@
-%div.jumbotron
-  %div.container
-    %h4
-      Optumm
+%div.jumbotron{style: 'padding: 28px;'}
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h1
+        Optumm
 
 %div.container
   %div.row
-    %div.col-md-12
-      %iframe{:src=>"https://www.mapbox.com/bites/00011/", :frameborder=>"no", :width=>"100%", :height=>"400"}
+    %div.col-md-6
+      %iframe{:src=>"https://www.mapbox.com/bites/00011/", :frameborder=>"no", :width=>"100%", :height=>"300"}
+    %div.col-md-6
+      %iframe{:src=>"//www.youtube.com/embed/mrNSAqiO0SY?autoplay=1&controls=0&showinfo=0&rel=0&hd=1", width: '100%', height: '300', frameborder: "0"}
   %div.row
-    %div.col-md-12
-      Our aim is to improve the cycling experience.  First in Glasgow, then the world!
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-map-marker
+        Our aim is to improve your cycling experience.
+      %h5.text-center
+        First in Glasgow, then in the wider world!
 
+  %hr
   %div.row
-    %div.col-md-12
-      %a{ :href => "/poll", :title => "Help Us Out!"} Help Us Out
+    %div.col-md-6
+      %h4
+        %span.glyphicon.glyphicon-link
+        How can I help?
+      Let us know what you'd like to see in our app, with this
+      %a{ :href => "/poll", :title => "Help Us Out!"}
+        quick questionnaire!
+      %br
+      We value your honest feedback, throughout the development process.
+
+    %div.col-md-6
+      %h4
+        %span.glyphicon.glyphicon-eye-open
+        Looking for goodies to play with?
+      An online smart-map for orientation when out-and-about is available
+      %a{href: 'http://include.cat:8008'}
+        here.
+      %br
+      Find a quick route to important resources, including public toilets and bike-racks!
+
