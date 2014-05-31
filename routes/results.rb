@@ -57,9 +57,11 @@ class FancyARide < Sinatra::Application
     histogram = {"daily" => 0, "weekly" => 0, "monthly" => 0, "occasionally" => 0, "never" => 0, "unsure" => 0}
     @raw_results.each do |idx, poll_entry|
       begin
-        app_freq = poll_entry.fetch("cycle_app_freq", nil)
-        unless app_freq.nil?
-          histogram[app_freq] += 1
+        if poll_entry.fetch("cycle_apps_yn", nil) == "yes"
+          app_freq = poll_entry.fetch("cycle_app_freq", nil)
+          unless app_freq.nil?
+            histogram[app_freq] += 1
+          end
         end
       rescue
         puts "missing data"
