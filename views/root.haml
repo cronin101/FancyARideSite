@@ -1,11 +1,12 @@
+%script{src: '/root.js'}
 %div.container
   %div.row
     %div.col-md-10.col-sm-offset-1
-      %div.jumbotron{style: 'padding: 28px; background-image: url(/glas.png);'}
+      %div.jumbotron#slidetron{style: 'padding: 28px; background-image: url(/glas.png); display: none;'}
         %div.container
           %div.row
             %div.col-md-6.col-sm-offset-3
-              %img.text-center{src: '/optumm.png', height: '100px', style: '-webkit-transform:rotate(2deg); -webkit-backface-visibility: hidden;'}
+              %img.text-center{src: '/optumm.png', style: '-webkit-transform:rotate(2deg); -webkit-backface-visibility: hidden; width: 100%;'}
           %h4.text-center{style: "font: 400 25px/1.3 'Lobster Two', Helvetica, sans-serif;"}
             Fancy a Ride?
   %div.row{style: 'margin-left: -150px; margin-right: -150px; padding: 20px; padding-top: 40px; background-image: url(/fabric.png);'}
