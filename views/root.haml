@@ -1,9 +1,11 @@
 %div.container
   %div.jumbotron{style: 'padding: 28px;'}
-    %h1.text-center
-      Optumm
-    %h4.text-center{style: "font: 400 25px/1.3 'Lobster Two', Helvetica, sans-serif;"}
-      Fancy a Ride?
+    %div.container
+      %div.row
+        %div.col-md-6.col-sm-offset-3
+          %img.text-center{src: '/optumm.png', height: '100px'}
+      %h4.text-center{style: "font: 400 25px/1.3 'Lobster Two', Helvetica, sans-serif;"}
+        Fancy a Ride?
   %div.row
     %div.col-md-7
       %iframe{:src=>"https://www.mapbox.com/bites/00011/", :frameborder=>"no", :width=>"100%", :height=>"300"}
