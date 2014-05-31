@@ -101,13 +101,13 @@
             ]
           }
 
-      new Chart(ctx_app_freq_bars).Bar(data_app_freq_bars, {scaleOverride: true, scaleSteps: 1, scaleStepWidth: 1, scaleStartValue: 0});
+      new Chart(ctx_app_freq_bars).Bar(data_app_freq_bars);
 
 
       var ctx_radar_reasons = $("#radar_chart_reasons").get(0).getContext("2d");
       var myNewChartRadarReasons = new Chart(ctx_radar_reasons);
       var data_radar_reasons = {
-            labels : ["Commuting To/From Work","Commuting To/From School","To Get Around","For Leisuer/Fun","For Exercise", "Other"],
+            labels : ["Commuting To/From Work","Commuting To/From School","To Get Around","For Leisure/Fun","For Exercise", "Other"],
             datasets : [
               {
                 fillColor : "rgba(28,230,28,0.5)",
