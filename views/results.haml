@@ -21,8 +21,27 @@
         What Percentage of People in Glasgow Cycle?
   %br
   %div.row
+    %div.col-md-6.col-sm-offset-4
+      %canvas{:id => "who_cycles_chart", :width => "400", :height => "400"}
+
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-comment
+        How often do people use their cycling apps?
+  %br
+  %div.row
+    %div.col-md-6.col-sm-offset-4
+      %canvas{:id => "app_freq_bars", :width => "400", :height => "400"}
+
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-comment
+        How do the reasons for cycling differ between those who use cycling apps and those who don't?
+  %div.row
     %div.col-md-8.col-sm-offset-2
-      %canvas{:id => "who_cycles_chart", :width => "750", :height => "600"}
+      %canvas{:id => "radar_chart_reasons", :width => "750", :height => "600"}
 
 :javascript
     $(document).ready( function() {
@@ -50,6 +69,8 @@
           }
 
       new Chart(ctx_radar).Radar(data_radar);
+
+
       var ctx_who_cycles_chart = $("#who_cycles_chart").get(0).getContext("2d");
       var whoCyclesChart = new Chart(ctx_who_cycles_chart);
       var data = [
@@ -63,5 +84,48 @@
           }
       ]
       new Chart(ctx_who_cycles_chart).Pie(data);
+
+
+      var ctx_app_freq_bars = $("#app_freq_bars").get(0).getContext("2d");
+      var myNewAppFreqBars = new Chart(ctx_app_freq_bars);
+      var data_app_freq_bars = {
+            labels : ["Daily","Weekly","Monthly","Occasionally","Never", "Unsure"],
+            datasets : [
+              {
+                fillColor : "rgba(242,153,236,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : #{@cycle_hist}
+              }
+            ]
+          }
+
+      new Chart(ctx_app_freq_bars).Bar(data_app_freq_bars, {scaleOverride: true, scaleSteps: 1, scaleStepWidth: 1, scaleStartValue: 0});
+
+
+      var ctx_radar_reasons = $("#radar_chart_reasons").get(0).getContext("2d");
+      var myNewChartRadarReasons = new Chart(ctx_radar_reasons);
+      var data_radar_reasons = {
+            labels : ["Commuting To/From Work","Commuting To/From School","To Get Around","For Leisuer/Fun","For Exercise", "Other"],
+            datasets : [
+              {
+                fillColor : "rgba(28,230,28,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : #{@yes_reasons}
+              },
+              {
+                fillColor : "rgba(232,26,50,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : #{@no_reasons}
+              }
+            ]
+          }
+
+      new Chart(ctx_radar_reasons).Radar(data_radar_reasons);
 
     } );

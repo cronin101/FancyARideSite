@@ -11,6 +11,15 @@ class FancyARide < Sinatra::Application
     @male_rankings.map! {|x| x / gender_counts['m'].to_f}
     @female_rankings = rankings_by_male_or_female['f'].values
     @female_rankings.map! {|y| y / gender_counts['f'].to_f}
+    @cycle_hist = cycle_app_hist.values
+
+    reasons_by_app_use = reason_for_cycling_by_use_of_app
+    @yes_reasons = reasons_by_app_use["yes"].values
+    @yes_reasons[1] += 1
+    @no_reasons = reasons_by_app_use["no"].values
+    puts @yes_reasons
+    puts "awooga"
+    puts @no_reasons
     haml :results
   end
 
@@ -47,6 +56,21 @@ class FancyARide < Sinatra::Application
     number_of_cyclists
   end
 
+  def cycle_app_hist
+    histogram = {"daily" => 0, "weekly" => 0, "monthly" => 0, "occasionally" => 0, "never" => 0, "unsure" => 0}
+    @raw_results.each do |idx, poll_entry|
+      begin
+        app_freq = poll_entry.fetch("cycle_app_freq", nil)
+        unless app_freq.nil?
+          histogram[app_freq] += 1
+        end
+      rescue
+        puts "missing data"
+      end
+    end
+    histogram
+  end
+
   def calculate_rankings_by_male_or_female
     rank_entries = ['ranking_route_map', 'ranking_parking', 'ranking_bike_shops', 'ranking_air', 'ranking_accidents']
     results = {'m' => {'ranking_route_map' => 0.0, 'ranking_parking' => 0.0, 'ranking_bike_shops' => 0.0, 'ranking_air' => 0.0, 'ranking_accidents' => 0.0}, 'f' => {'ranking_route_map' => 0.0, 'ranking_parking' => 0.0, 'ranking_bike_shops' => 0.0, 'ranking_air' => 0.0, 'ranking_accidents' => 0.0}}
@@ -61,6 +85,22 @@ class FancyARide < Sinatra::Application
         rescue
           puts "missing data"
         end
+      end
+    end
+    results
+  end
+
+  def reason_for_cycling_by_use_of_app
+    results = {"yes" => {"work" => 0, "school" => 0, "around" => 0, "fun" => 0, "exercise" => 0, "other" => 0}, "no" => {"work" => 0, "school" => 0, "around" => 0, "fun" => 0, "exercise" => 0, "other" => 0}}
+    @raw_results.each do |idx, poll_entry|
+      uses_apps = poll_entry["cycle_apps_yn"]
+      begin
+        my_reason = poll_entry.fetch("cycle_yes", nil)
+        unless my_reason.nil?
+          results[uses_apps][my_reason] += 1
+        end
+      rescue
+        puts "missing data"
       end
     end
     results
