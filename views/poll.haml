@@ -1,35 +1,156 @@
 %div.jumbotron
   %div.container
     %h4
-      %span.glyphicon.glyphicon-pushpin
-        LoL Dicks 8======D
-    Blah blah blah
+      Customer Validation Poll
 
 %div.container
   %div.row
-    %div.col-md-12
-      Herp derp derp
-
-  %div.row
-    %div.col-md-6
-      %h5
-        %span.glyphicon.glyphicon-off
-        Need to find somewhere to park your bike?
-      %button.btn.btn-info#cycle_racks
-        Herp derp
-      %button.btn.btn-success#find_nearest
-        Derp derp
-    %div.col-md-6
-      %h5
-        %span.glyphicon.glyphicon-star-empty
-        Looking for something else?
-      %h5{style: 'margin-top: 16px; display:inline;'}
-        Find me a nearby
-      %div.btn-group.dropup
-        %button.btn.btn-default.dropdown-toggle{'data-toggle' => 'dropdown'}
-          place of interest
-          %span.caret
-        %ul.dropdown-menu
+    %form{ :action => "", :method => "post"}
+      %fieldset
+        %ol
           %li
-            %a{href: '#'}
-              Restroom
+            %label{:for => "smartphone_yn"} Do you own a smartphone?:
+            %br/
+            %input{:type => "radio", :name => "smartphone_yn", :value => "yes"} Yes
+            %br/
+            %input{:type => "radio", :name => "smartphone_yn", :value => "no"} No
+          %li
+            %label{:for => "map_app_yn"} Do you have a map app?:
+            %br/
+            %input{:type => "radio", :name => "map_app_yn", :value => "yes"} Yes
+            %br/
+            %input{:type => "radio", :name => "mapp_app_yn", :value => "no"} No
+          %li
+            %label{:for => "map_apps"} Which map app(s) do you have on your phone? (check all that apply):
+            %br/
+            %input{:type => "checkbox", :name => "map_apps", :value => "gmaps"} Google Maps
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "here_maps"} Here Maps
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "mapquest"} MapQuest
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "open_street_map"} OpenStreetMap
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "city_mapper"} City Mapper
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "crowd_map"} Crowdmap
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "track_profiler"} TrackProfiler
+            %br/
+            %input{:type => "checkbox", :name => "mapp_apps", :value => "other"} Other
+          %li
+            %label{:for => "cycle_yn"} Do you cycle in the city of Glasgow?:
+            %br/
+            %input{:type => "radio", :name => "cycle_yn", :value => "yes"} Yes
+            %br/
+            %input{:type => "radio", :name => "cycle_yn", :value => "no"} No
+          %li
+            %label{:for => "cycle_no"} If no, would any of the following encourage you to cycle in Glasgow?:
+            %br/
+            %input{:type => "checkbox", :name => "cycle_no", :value => "route_map"} A map showing the city's dedicated cycle routes
+            %br/
+            %input{:type => "checkbox", :name => "cycle_no", :value => "rack_map"} A map showing locations where you could securely park your bike
+            %br/
+            %input{:type => "checkbox", :name => "cycle_no", :value => "shops_map"} A map showing locations of bike shops around the city
+            %br/
+            %input{:type => "checkbox", :name => "cycle_no", :value => "air_map"} A map showing the city's air quality
+            %br/
+            %input{:type => "checkbox", :name => "cycle_no", :value => "accident_map"} A map showing accident hot spots (so you can avoid those areas)
+          %li
+            %label{:for => "cycle_yes"} If yes, do you cycle for?:
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "work"} Commuting to/from work
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "school"} Commuting to/from school
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "around"} To get around
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "fun"} For leisure/fun/exercise
+            %br/
+            %input{:type => "checkbox", :name => "cycle_yes", :value => "other"} Other
+          %li
+            %label{:for => "cycle_freq"} If yes, how often do you cycle?:
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "daily"} Daily
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "weekly"} Weekly
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "monthly"} Monthly
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "occasionally"} Occasionally
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "never"} Never
+            %br/
+            %input{:type => "radio", :name => "cycle_freq", :value => "unsure"} Unsure
+          %li
+            %label{:for => "cycle_apps_yn"} Do you use any cycling apps?:
+            %br/
+            %input{:type => "radio", :name => "cycle_apps_yn", :value => "yes"} Yes
+            %br/
+            %input{:type => "radio", :name => "cycle_apps_yn", :value => "no"} No
+          %li
+            %label{:for => "cycle_apps"} If yes, what cycle apps do you use?:
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "strava"} Strava
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "bike_repair"} Bike Repair
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "garmin"} Garmin Fit
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "cyclemeter"} Cyclemeter
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "bike_doctor"} Bike Doctor
+            %br/
+            %input{:type => "checkbox", :name => "cycle_apps", :value => "other"} Other
+          %li
+            %label{:for => "cycle_app_freq"} If yes, how often do you use cycle apps?:
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "daily"} Daily
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "weekly"} Weekly
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "monthly"} Monthly
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "occasionally"} Occasionally
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "never"} Never
+            %br/
+            %input{:type => "radio", :name => "cycle_app_freq", :value => "unsure"} Unsure
+          %li
+            %label{:for => "ranking"} Please rank the following in order of importance, 1 being highest importance, 5 being lowest importance?:
+            %br/
+            %input{:type => "text", :name => "ranking_route_map", :class => "text"} A map showing dedicated cycle routes
+            %br/
+            %input{:type => "text", :name => "ranking_parking", :class => "text"} A map showing where to park your bike
+            %br/
+            %input{:type => "text", :name => "ranking_bike_shops", :class => "text"} A map showing bike shop locations
+            %br/
+            %input{:type => "text", :name => "ranking_air", :class => "text"} A map showing the cities air quality
+            %br/
+            %input{:type => "text", :name => "ranking_accidents", :class => "text"} A map showing accident hotspots
+          %li
+            %label{:for => "story"} Do you have a story about cycling in Glasgow?:
+            %br/
+            %input{:type => "text", :name => "story", :class => "text"}
+            %br/
+          %li
+            %label{:for => "year"} What year were you born?
+            %br/
+            %input{:type => "text", :name => "year", :class => "text"}
+            %br/
+          %li
+            %label{:for => "gender"} Are you male or female?:
+            %br/
+            %input{:type => "radio", :name => "gender", :value => "m"} Male
+            %br/
+            %input{:type => "radio", :name => "gender", :value => "f"} Female
+          %li
+            %label{:for => "location"} Are you?:
+            %br/
+            %input{:type => "radio", :name => "location", :value => "glasgow"} Resident in Glasgow City
+            %br/
+            %input{:type => "radio", :name => "location", :value => "scotland"} Resident outside of Glasgow City, but in Scotland
+            %br/
+            %input{:type => "radio", :name => "location", :value => "tourist"} Not From Scotland
+
+        %input{:type => "submit", :value => "Send", :class => "button"}
