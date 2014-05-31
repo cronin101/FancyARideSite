@@ -1,9 +1,13 @@
 %div.container
-  %div.jumbotron{style: 'padding: 28px; background-image: url(/px.png);'}
-    %h1.text-center
-      Optumm
-    %h4.text-center{style: "font: 400 25px/1.3 'Lobster Two', Helvetica, sans-serif;"}
-      Fancy a Ride?
+  %div.row
+    %div.col-md-10.col-sm-offset-1
+      %div.jumbotron{style: 'padding: 28px; background-image: url(/glas.png); box-shadow: 0px 0px 4px #888888;'}
+        %div.container
+          %div.row
+            %div.col-md-6.col-sm-offset-3
+              %img.text-center{src: '/optumm.png', height: '100px', style: '-webkit-transform:rotate(2deg); -webkit-backface-visibility: hidden;'}
+          %h4.text-center{style: "font: 400 25px/1.3 'Lobster Two', Helvetica, sans-serif;"}
+            Fancy a Ride?
   %div.row
     %div.col-md-7
       %iframe{:src=>"https://www.mapbox.com/bites/00011/", :frameborder=>"no", :width=>"100%", :height=>"300"}
@@ -14,10 +18,12 @@
       %iframe{:src=>"//www.youtube.com/embed/mrNSAqiO0SY?autoplay=1&controls=0&showinfo=0&rel=0&hd=", width: '87%', height: '300', frameborder: "0"}
       %h5.text-center{style: 'margin-left: -50px;'}
         %span.glyphicon.glyphicon-hand-up
-        HTML5 SmartMap, optimised for mobile browsers.
+        %a{href: 'http://far.include.cat'}
+          HTML5 Smart-Map
+        , optimised for mobile browsers.
   %div.row
     %div.col-md-6.col-sm-offset-3
-      %h3
+      %h3.text-center{style: "font: 400 30px/1.3 'Lobster Two', Helvetica, sans-serif;"}
         %span.glyphicon.glyphicon-map-marker
         Our aim is to improve your cycling experience.
       %h5.text-center
@@ -48,4 +54,45 @@
         here.
       %br
       Find a quick route to important resources, including public toilets and bike-racks!
+
+  %hr
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3.text-center{style: "font: 400 30px/1.3 'Lobster Two', Helvetica, sans-serif;"}
+        %span.glyphicon.glyphicon-volume-off
+        Don't just take our word for it!
+      %h5.text-center
+        We interrupted some good-looking members of the general public (while they were trying to visit a museum in peace), just to check that we are on the right track.
+  %hr
+  %div.row
+    %div.col-md-3
+      %img.text-center{src: '/photo4.png', width: '150px', style: 'box-shadow: 5px 5px 5px #888888; border-radius: 100px;'}
+    %div.col-md-9
+      %blockquote
+        %p
+          "I have cycled to work almost every day for seven years and I love my folding bike.
+          %br
+          I am interested in finding new routes and places to park."
+  %hr
+  %div.row
+    %div.col-md-3.col-sm-offset-1
+      %img.text-center{src: '/photo3.png', width: '150px', style: 'box-shadow: 5px 5px 5px #888888; border-radius: 100px;'}
+    %div.col-md-8
+      %blockquote
+        %p
+          "I'd love to go out and cycle more to keep fit, but I'm always scared that I'll get lost.
+          %br
+          I want an app that will keep me on-track in Glasgow"
+  %hr
+  %div.row
+    %div.col-md-3
+      %img.text-center{src: '/photo1.png', width: '150px', style: 'box-shadow: 5px 5px 5px #888888; border-radius: 100px;'}
+    %div.col-md-9
+      %blockquote
+        %p
+          "I like hats.
+          %br
+          Does this app have hats?"
+  %hr
+
 
