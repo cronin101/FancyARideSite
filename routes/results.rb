@@ -80,7 +80,7 @@ class FancyARide < Sinatra::Application
         begin
           score = poll_entry[rank].to_f
           if score != 0.0
-            results[gender][rank] += (1/score)
+            results[gender][rank] += score
           end
         rescue
           puts "missing data"
