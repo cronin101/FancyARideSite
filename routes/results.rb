@@ -17,9 +17,6 @@ class FancyARide < Sinatra::Application
     @yes_reasons = reasons_by_app_use["yes"].values
     @yes_reasons[1] += 1
     @no_reasons = reasons_by_app_use["no"].values
-    puts @yes_reasons
-    puts "awooga"
-    puts @no_reasons
     haml :results
   end
 
