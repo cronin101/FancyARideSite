@@ -1,14 +1,14 @@
 %script{src: 'https://cdn.rawgit.com/nnnick/Chart.js/master/Chart.min.js'}
-%div.jumbotron
-  %div.container
-    %h4
-      Optumm
-    Findings from Customers
-
 %div.container
+  %div.jumbotron{style: 'padding: 28px;'}
+    %h1.text-center
+      Optumm
+    %h4.text-center
+      Fancy a Ride?
+
   %div.row
-    %div.col-md-12
-      %canvas{:id => "radar_chart", :width => "400", :height => "400"}
+    %div.col-md-8.col-sm-offset-2
+      %canvas{:id => "radar_chart", :width => "750", :height => "600"}
 
 :javascript
     $(document).ready( function() {
@@ -19,7 +19,7 @@
             labels : ["Route Map","Parking Map","Bike Shop Map","Air Quality Map","Accident Map"],
             datasets : [
               {
-                fillColor : "rgba(220,220,220,0.5)",
+                fillColor : "rgba(242,153,236,0.5)",
                 strokeColor : "rgba(220,220,220,1)",
                 pointColor : "rgba(220,220,220,1)",
                 pointStrokeColor : "#fff",
