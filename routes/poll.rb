@@ -6,7 +6,7 @@ class FancyARide < Sinatra::Application
   end
 
   post '/poll' do
-    File.open('poll_results.txt', 'a') { |file| file.write(JSON.generate(params)+"\n") }
+    File.open('poll_results.txt', 'a') { |file| file.puts JSON.generate(params) }
     haml :poll
   end
 end
