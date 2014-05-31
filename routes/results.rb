@@ -5,6 +5,8 @@ class FancyARide < Sinatra::Application
     parse_results
     rankings_by_male_or_female = calculate_rankings_by_male_or_female
     gender_counts = count_gender
+    @number_of_cyclists = count_cyclists
+    @number_of_people = @raw_results.size
     @male_rankings = rankings_by_male_or_female['m'].values
     @male_rankings.map! {|x| x / gender_counts['m'].to_f}
     @female_rankings = rankings_by_male_or_female['f'].values
@@ -29,6 +31,20 @@ class FancyARide < Sinatra::Application
       end
     end
     counts
+  end
+
+  def count_cyclists
+    number_of_cyclists = 0
+    @raw_results.each do |idx, poll_entry|
+      begin
+        if poll_entry['cycle_yn'] == "yes"
+          number_of_cyclists += 1
+        end
+      rescue
+        puts "missing data"
+      end
+    end
+    number_of_cyclists
   end
 
   def calculate_rankings_by_male_or_female

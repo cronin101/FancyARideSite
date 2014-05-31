@@ -5,10 +5,23 @@
       Optumm
     %h4.text-center
       Fancy a Ride?
-
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-comment
+        Which features are most desired by men or women?
   %div.row
     %div.col-md-8.col-sm-offset-2
       %canvas{:id => "radar_chart", :width => "750", :height => "600"}
+
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        %span.glyphicon.glyphicon-comment
+        What Percentage of People in Glasgow Cycle?
+  %div.row
+    %div.col-md-8.col-sm-offset-2
+      %canvas{:id => "who_cycles_chart", :width => "750", :height => "600"}
 
 :javascript
     $(document).ready( function() {
@@ -36,6 +49,18 @@
           }
 
       new Chart(ctx_radar).Radar(data_radar);
-
+      var ctx_who_cycles_chart = $("#who_cycles_chart").get(0).getContext("2d");
+      var whoCyclesChart = new Chart(ctx_who_cycles_chart);
+      var data = [
+          {
+            value: #{@number_of_cyclists},
+            color: "#F38630"
+          },
+          {
+            value: #{@number_of_people} - #{@number_of_cyclists},
+            color: "#E0E4CC"
+          }
+      ]
+      new Chart(ctx_who_cycles_chart).Pie(data);
 
     } );
