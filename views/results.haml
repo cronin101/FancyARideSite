@@ -14,6 +14,10 @@
   %div.row
     %div.col-md-6.col-sm-offset-4
       %canvas{:id => "who_cycles_chart", :width => "400", :height => "400"}
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %h3
+        #{@cycle_percent}% Cycle.
 
   %div.row
     %div.col-md-6.col-sm-offset-3
@@ -42,6 +46,11 @@
   %div.row
     %div.col-md-8.col-sm-offset-2
       %canvas{:id => "radar_chart_reasons", :width => "750", :height => "600"}
+
+  %div.row
+    %div.col-md-6.col-sm-offset-3
+      %p
+        These results calculated from #{@number_of_people} samples.
 
 :javascript
     $(document).ready( function() {
