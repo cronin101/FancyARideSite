@@ -110,7 +110,7 @@
             ]
           }
 
-      new Chart(ctx_app_freq_bars).Bar(data_app_freq_bars);
+      new Chart(ctx_app_freq_bars).Bar(data_app_freq_bars, {scaleOverride: true, scaleSteps:#{@max_freq}, scaleStepWidth:1, scaleStartValue:0});
 
 
       var ctx_radar_reasons = $("#radar_chart_reasons").get(0).getContext("2d");

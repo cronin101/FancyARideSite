@@ -7,12 +7,13 @@ class FancyARide < Sinatra::Application
     gender_counts = count_gender
     @number_of_cyclists = count_cyclists
     @number_of_people = @raw_results.size
-    @cycle_percent = 100*@number_of_cyclists/@number_of_people.to_f
+    @cycle_percent = (100*@number_of_cyclists/@number_of_people.to_f).round(2)
     @male_rankings = rankings_by_male_or_female['m'].values
     @male_rankings.map! {|x| x / gender_counts['m'].to_f}
     @female_rankings = rankings_by_male_or_female['f'].values
     @female_rankings.map! {|y| y / gender_counts['f'].to_f}
     @cycle_hist = cycle_app_hist.values
+    @max_freq = @cycle_hist.max
 
     reasons_by_app_use = reason_for_cycling_by_use_of_app
     @yes_reasons = reasons_by_app_use["yes"].values
