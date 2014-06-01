@@ -11,7 +11,7 @@ class FancyARide < Sinatra::Application
     @male_rankings = rankings_by_male_or_female['m'].values
     @male_rankings.map! {|x| x / gender_counts['m'].to_f}
     @female_rankings = rankings_by_male_or_female['f'].values
-    @female_rankings.map! {|y| y / 4*gender_counts['f'].to_f}
+    @female_rankings.map! {|y| y / (2*gender_counts['f'].to_f)}
     @cycle_hist = cycle_app_hist.values
     @max_freq = @cycle_hist.max
 
